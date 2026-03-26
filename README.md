@@ -14,9 +14,10 @@ rework/     ← Improved version after the assessment (same game, better code)
 ## About the game
 
 - Top-down arcade survivor with infinite waves
-- Enemies grow bigger and faster each wave
-- Weapon upgrades and power-ups
+- Local leaderboard
+- Buy weapons and abilities
 - Built entirely in Godot 4 with GDScript
+- Music from [DOORS (Roblox)](https://www.roblox.com/games/6516141723) by LSPLASH
 
 ## Screenshots
 
