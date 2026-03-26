@@ -25,6 +25,12 @@ rework/     ← Improved version after the assessment (same game, better code)
   <img src="screenshot.png" width="600" alt="Hariboo Madness Godot screenshot" />
 </p>
 
+## Icon Evolution
+
+| IA (Godot) | Hariboo Madness (App Store) |
+|:-:|:-:|
+| <img src="icon_original.png" width="200" /> | <img src="icon_current.png" width="200" /> |
+
 ## Links
 
 - [App Store (Swift version)](https://apps.apple.com/es/app/hariboo/id6758705633)
