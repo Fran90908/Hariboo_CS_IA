@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://df67mygo25o6c"]
+
+[ext_resource type="Script" path="res://strength_potion.gd" id="1_0n2ts"]
+[ext_resource type="Texture2D" uid="uid://bgqdc0kisq8w" path="res://Potions/Yellow potion.png" id="1_nm2v1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbtrh"]
+radius = 26.0768
+
+[node name="StrengthPotion" type="Area2D"]
+collision_layer = 18
+collision_mask = 3
+script = ExtResource("1_0n2ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18)
+shape = SubResource("CircleShape2D_qbtrh")
+
+[node name="YellowPotion" type="Sprite2D" parent="."]
+scale = Vector2(0.0345459, 0.0345459)
+texture = ExtResource("1_nm2v1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

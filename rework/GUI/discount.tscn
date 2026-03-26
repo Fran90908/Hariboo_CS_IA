@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://cplg7wmyvcfey"]
+
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="1_5rk6i"]
+[ext_resource type="Script" path="res://GUI/discount.gd" id="1_swde0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juqdo"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 11
+
+[node name="Discount" type="CanvasLayer"]
+script = ExtResource("1_swde0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1942.0
+offset_bottom = 1108.0
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="title" type="Label" parent="."]
+offset_left = 74.0
+offset_top = 67.0
+offset_right = 1836.0
+offset_bottom = 187.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_5rk6i")
+theme_override_font_sizes/font_size = 97
+text = "Solve this math equation for a discount :)"
+
+[node name="Insert_answer" type="TextEdit" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -468.0
+offset_top = 172.0
+offset_right = 466.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.993424)
+theme_override_fonts/font = ExtResource("1_5rk6i")
+theme_override_font_sizes/font_size = 100
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -49.0
+offset_right = 152.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="equation" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_5rk6i")
+theme_override_font_sizes/font_size = 171
+text = "x * y ="
+
+[node name="Submit" type="Button" parent="."]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -143.0
+offset_right = 176.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_5rk6i")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_juqdo")
+action_mode = 0
+text = " Submit "
+
+[connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]

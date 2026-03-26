@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2gu7hl3ao00j"]
+
+[ext_resource type="Script" path="res://rpm.gd" id="1_c0b74"]
+[ext_resource type="Texture2D" uid="uid://clf73gfhp4ifp" path="res://Potions/Red potions.png" id="1_q8bgl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8y7g"]
+radius = 42.0119
+
+[node name="RPM" type="Area2D"]
+collision_layer = 18
+collision_mask = 3
+script = ExtResource("1_c0b74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17)
+shape = SubResource("CircleShape2D_s8y7g")
+
+[node name="RedPotions" type="Sprite2D" parent="."]
+scale = Vector2(0.0344238, 0.0344238)
+texture = ExtResource("1_q8bgl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

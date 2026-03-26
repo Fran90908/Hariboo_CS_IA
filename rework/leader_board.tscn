@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqn2bh3bo3lfp"]
+
+[ext_resource type="Script" path="res://leader_board.gd" id="1_dl6d8"]
+[ext_resource type="PackedScene" uid="uid://dg7p70jqbe6iv" path="res://Leaderboard/leaderboard_button.tscn" id="1_w61hm"]
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="2_quxir"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1n5a"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 11
+
+[node name="LeaderBoard" type="CanvasLayer"]
+script = ExtResource("1_dl6d8")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+process_mode = 3
+offset_right = 1933.0
+offset_bottom = 1099.0
+color = Color(0.117647, 0.117647, 0.117647, 0.717647)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 246.0
+offset_right = 1080.0
+offset_bottom = 971.0
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="LeaderboardContainer" type="VBoxContainer" parent="Control/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Leaderboard_button" parent="Control/ScrollContainer/MarginContainer/LeaderboardContainer" instance=ExtResource("1_w61hm")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 66.0
+offset_right = 732.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("2_quxir")
+theme_override_font_sizes/font_size = 120
+text = "Leaderboard"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1575.0
+offset_top = 912.0
+offset_right = 1874.0
+offset_bottom = 1034.0
+theme_override_fonts/font = ExtResource("2_quxir")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_n1n5a")
+action_mode = 0
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

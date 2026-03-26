@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://chvdlxwwiqjc1"]
+
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="1_qrth5"]
+[ext_resource type="Texture2D" uid="uid://c676d0adxuchu" path="res://Weapons/Dash_ability.png" id="2_61y3q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmcbj"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_palbc"]
+bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m316r"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="ShopItemDashButton" type="Button"]
+process_mode = 3
+custom_minimum_size = Vector2(1000, 150)
+offset_right = 220.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("1_qrth5")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_cmcbj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_palbc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m316r")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 37.0
+offset_right = 853.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("1_qrth5")
+theme_override_font_sizes/font_size = 80
+text = "Dash"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="PriceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 20.0
+offset_right = 978.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_qrth5")
+theme_override_font_sizes/font_size = 50
+text = "5"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 1048.0
+offset_bottom = 1045.0
+scale = Vector2(0.10499, 0.10499)
+texture = ExtResource("2_61y3q")

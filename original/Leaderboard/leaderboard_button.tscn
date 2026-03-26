@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg7p70jqbe6iv"]
+
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="1_1opbf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jyqa"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cej4j"]
+bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oush"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Leaderboard_button" type="Button"]
+process_mode = 3
+custom_minimum_size = Vector2(1000, 150)
+offset_right = 1000.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("1_1opbf")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jyqa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cej4j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7oush")
+action_mode = 0
+button_mask = 0
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 35.0
+offset_top = 46.0
+offset_right = 695.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("1_1opbf")
+theme_override_font_sizes/font_size = 80
+text = "Label so you can see what it is"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 753.0
+offset_top = 21.0
+offset_right = 979.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("1_1opbf")
+theme_override_font_sizes/font_size = 50
+text = "999"
+horizontal_alignment = 2
+text_overrun_behavior = 3

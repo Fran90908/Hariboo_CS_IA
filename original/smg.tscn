@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://chwxwkbkqs2pv"]
+
+[ext_resource type="Script" path="res://smg.gd" id="1_hh8oq"]
+[ext_resource type="Texture2D" uid="uid://b17l16pmfe54i" path="res://Weapons/Subfusil.png" id="2_888q7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c672d"]
+radius = 617.001
+
+[node name="SMG" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_hh8oq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -19)
+shape = SubResource("CircleShape2D_c672d")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+rotation = 0.00797832
+
+[node name="Subfusil" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(113.996, -0.909519)
+rotation = -0.00797832
+scale = Vector2(0.106201, 0.106201)
+texture = ExtResource("2_888q7")
+
+[node name="ShootingPointSMG" type="Marker2D" parent="WeaponPivot/Subfusil"]
+unique_name_in_owner = true
+position = Vector2(451.977, -160.074)
+rotation = 0.00797832
+scale = Vector2(9.41609, 9.41609)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.7
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

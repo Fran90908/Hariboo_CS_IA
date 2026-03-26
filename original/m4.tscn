@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxsr5pwl8bax1"]
+
+[ext_resource type="Script" path="res://M4.gd" id="1_xgbpn"]
+[ext_resource type="Texture2D" uid="uid://dok0t8d4ayam8" path="res://Weapons/M4.png" id="2_uei18"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c672d"]
+radius = 617.001
+
+[node name="M4" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_xgbpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -19)
+shape = SubResource("CircleShape2D_c672d")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+rotation = 0.00797832
+
+[node name="M4" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(134.94, -8.07684)
+rotation = -0.00797832
+scale = Vector2(0.176758, 0.176758)
+texture = ExtResource("2_uei18")
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(210.85, -19.6828)
+scale = Vector2(0.999998, 0.999998)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.7
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

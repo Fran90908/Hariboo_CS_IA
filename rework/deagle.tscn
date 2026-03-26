@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://xktjn2caeolc"]
+
+[ext_resource type="Script" path="res://Deagle.gd" id="1_k1ufq"]
+[ext_resource type="Texture2D" uid="uid://bwyssafry63eu" path="res://Weapons/Deagle.png" id="2_i7j8b"]
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="3_s663c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c672d"]
+radius = 617.001
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkysl"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyc8a"]
+bg_color = Color(0.66451, 0.66451, 0.66451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Deagle" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_k1ufq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c672d")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+rotation = 0.00797832
+
+[node name="Deagle" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(110.004, 0.122362)
+rotation = -0.00797832
+scale = Vector2(0.0957031, 0.0957031)
+texture = ExtResource("2_i7j8b")
+
+[node name="reload" type="ProgressBar" parent="WeaponPivot/Deagle"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = -0.131198
+anchor_top = -0.055983
+anchor_right = 0.365872
+anchor_bottom = -0.000318974
+offset_left = -168.673
+offset_top = -402.428
+offset_right = -39.6731
+offset_bottom = -389.428
+theme_override_fonts/font = ExtResource("3_s663c")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_nkysl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uyc8a")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Deagle"]
+unique_name_in_owner = true
+position = Vector2(438.857, -198.531)
+rotation = 0.00797832
+scale = Vector2(10.449, 10.449)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

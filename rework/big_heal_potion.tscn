@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://qvia0r58jqew"]
+
+[ext_resource type="Script" path="res://big_heal_potion.gd" id="1_bxfhm"]
+[ext_resource type="Texture2D" uid="uid://bjmiio4rfowyk" path="res://Potions/Green potion.png" id="2_s8w5y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_njmd3"]
+radius = 44.0454
+
+[node name="Big_heal_potion" type="Area2D"]
+collision_layer = 18
+collision_mask = 3
+script = ExtResource("1_bxfhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("CircleShape2D_njmd3")
+
+[node name="GreenPotion" type="Sprite2D" parent="."]
+position = Vector2(0.624998, 1.93994)
+scale = Vector2(0.0335693, 0.0335693)
+texture = ExtResource("2_s8w5y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

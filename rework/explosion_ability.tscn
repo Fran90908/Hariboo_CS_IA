@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://g65r6qtypvli"]
+
+[ext_resource type="Script" path="res://explosion_ability.gd" id="1_kyi54"]
+[ext_resource type="Texture2D" uid="uid://dujvejp67lj3v" path="res://Weapons/AoE.png" id="2_iwfyy"]
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="3_qgedt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn1lv"]
+radius = 165.027
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yvoa"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utvkc"]
+bg_color = Color(0.66451, 0.66451, 0.66451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="explosion_ability" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_kyi54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_rn1lv")
+
+[node name="AoE" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-3, -2)
+scale = Vector2(0.599732, 0.599732)
+texture = ExtResource("2_iwfyy")
+
+[node name="reload" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -64.0
+offset_top = 36.0
+offset_right = 65.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("3_qgedt")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_6yvoa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_utvkc")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true

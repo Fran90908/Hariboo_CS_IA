@@ -1,0 +1,382 @@
+[gd_scene load_steps=29 format=3 uid="uid://g2760lw05qe5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_awrje"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_ogb7c"]
+[ext_resource type="PackedScene" uid="uid://cxsr5pwl8bax1" path="res://m4.tscn" id="2_0vtre"]
+[ext_resource type="PackedScene" uid="uid://chwxwkbkqs2pv" path="res://smg.tscn" id="2_sx5o4"]
+[ext_resource type="PackedScene" uid="uid://c5jhniveasutg" path="res://gun.tscn" id="3_dqeln"]
+[ext_resource type="Script" path="res://Player_name.gd" id="3_r4t1p"]
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="4_fgyjr"]
+[ext_resource type="Script" path="res://Label.gd" id="4_r4xwv"]
+[ext_resource type="Script" path="res://Wave.gd" id="6_dpb5p"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="8_2idho"]
+[ext_resource type="Script" path="res://Coin.gd" id="8_xaqaw"]
+[ext_resource type="PackedScene" uid="uid://xktjn2caeolc" path="res://deagle.tscn" id="9_kqk3d"]
+[ext_resource type="Texture2D" uid="uid://bvdkqiitoa47l" path="res://Weapons/Coin.png" id="10_s5yeq"]
+[ext_resource type="PackedScene" uid="uid://g65r6qtypvli" path="res://explosion_ability.tscn" id="13_meard"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vegpl"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki2hs"]
+bg_color = Color(0.623529, 0.866667, 0.317647, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwfd7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dj6an"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.870588, 0.313726, 0.168627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk00j"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0oxr2"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 0.717647, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3rfx"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_886tt"]
+bg_color = Color(0.0627451, 0.698039, 0.937255, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 0.01
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3e6k4"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7qef"]
+radius = 41.0122
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jj34"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3hqe"]
+bg_color = Color(0.66451, 0.66451, 0.66451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjw5v"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xkaj"]
+bg_color = Color(1, 0.835294, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(963.358, 541)
+collision_layer = 2049
+collision_mask = 1041
+script = ExtResource("1_awrje")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("8_2idho")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Player_name" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -163.642
+offset_top = -72.0
+offset_right = -8.64246
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.94902, 0.94902, 0.94902, 0.482353)
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+text = "Lorem"
+script = ExtResource("3_r4t1p")
+metadata/_edit_use_anchors_ = true
+
+[node name="TutorialMode" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 554.358
+offset_top = 718.0
+offset_right = 1374.36
+offset_bottom = 787.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 50
+text = "Press \"E\" to buy your first weapon :)"
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 997.358
+offset_top = 43.0
+offset_right = 1872.36
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_vegpl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ki2hs")
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = -0.000186284
+anchor_right = -0.000186284
+offset_left = 938.358
+offset_top = 47.0
+offset_right = 985.358
+offset_bottom = 107.0
+scale = Vector2(0.998168, 0.987487)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+text = "+:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 58.3576
+offset_top = 42.0
+offset_right = 369.358
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+text = "SCORE: 0"
+script = ExtResource("4_r4xwv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="Label" parent="CanvasLayer"]
+offset_left = 147.358
+offset_top = 971.0
+offset_right = 458.358
+offset_bottom = 1054.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+text = "0"
+script = ExtResource("8_xaqaw")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -436.642
+offset_top = 120.0
+offset_right = -423.642
+offset_bottom = 126.0
+grow_horizontal = 0
+scale = Vector2(30, 30)
+theme_override_constants/separation = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RPMBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_mwfd7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dj6an")
+value = 100.0
+show_percentage = false
+
+[node name="StrengthBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_xk00j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0oxr2")
+value = 100.0
+show_percentage = false
+
+[node name="SpeedBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_t3rfx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_886tt")
+value = 100.0
+show_percentage = false
+
+[node name="Wave" type="Label" parent="CanvasLayer"]
+offset_left = 58.3576
+offset_top = 114.0
+offset_right = 279.358
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+text = "WAVE: 0"
+script = ExtResource("6_dpb5p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(87.3576, 996)
+scale = Vector2(0.0983546, 0.0983546)
+texture = ExtResource("10_s5yeq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3e6k4")
+
+[node name="explosion_ability" parent="." instance=ExtResource("13_meard")]
+position = Vector2(-1.35797, -14)
+
+[node name="Deagle" parent="." instance=ExtResource("9_kqk3d")]
+visible = false
+position = Vector2(-1.35797, -43)
+
+[node name="Gun" parent="." instance=ExtResource("3_dqeln")]
+position = Vector2(-1, -48)
+
+[node name="M4" parent="." instance=ExtResource("2_0vtre")]
+position = Vector2(-1, -49)
+
+[node name="SMG" parent="." instance=ExtResource("2_sx5o4")]
+visible = false
+position = Vector2(-5, -49)
+
+[node name="HurtBoxSmall" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxSmall"]
+shape = SubResource("CircleShape2D_y7qef")
+debug_color = Color(0.905882, 0.227451, 0.513726, 0.419608)
+
+[node name="HurtBoxBig" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBig"]
+shape = SubResource("CircleShape2D_y7qef")
+debug_color = Color(0.905882, 0.227451, 0.513726, 0.419608)
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_ogb7c")]
+position = Vector2(0, 3)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_y7qef")
+debug_color = Color(0.905882, 0.227451, 0.513726, 0.419608)
+
+[node name="DashBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -64.0
+offset_top = -118.0
+offset_right = 65.0
+offset_bottom = -105.0
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_0jj34")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k3hqe")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="DashCharge" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -107.0
+offset_top = -127.0
+offset_right = 108.0
+offset_bottom = -104.0
+theme_override_fonts/font = ExtResource("4_fgyjr")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/background = SubResource("StyleBoxFlat_hjw5v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2xkaj")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="SpeedTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="StrengthTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="RPMTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]
+[connection signal="timeout" from="StrengthTimer" to="." method="_on_strength_timer_timeout"]
+[connection signal="timeout" from="RPMTimer" to="." method="_on_rpm_timer_timeout"]

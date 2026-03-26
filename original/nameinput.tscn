@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://b146lr27ilnx3"]
+
+[ext_resource type="Script" path="res://nameinput.gd" id="1_27o1g"]
+[ext_resource type="FontFile" uid="uid://bonldl27xdbpc" path="res://Fonts/Jua-Regular.ttf" id="1_rtpes"]
+
+[sub_resource type="Animation" id="Animation_h0dui"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_hukxh"]
+resource_name = "no_name"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(493, 476), Vector2(321, 476), Vector2(658, 476), Vector2(493, 476)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1club"]
+_data = {
+"RESET": SubResource("Animation_h0dui"),
+"no_name": SubResource("Animation_hukxh")
+}
+
+[sub_resource type="Theme" id="Theme_tw201"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hifa6"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="InsertName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_27o1g")
+
+[node name="Insert_name_box" type="TextEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2413.0
+offset_top = 1556.0
+offset_right = 3347.0
+offset_bottom = 1684.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_rtpes")
+theme_override_font_sizes/font_size = 100
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Insert_name_box"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_1club")
+}
+
+[node name="Insert_name_text" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -612.0
+offset_top = 124.0
+offset_right = 609.0
+offset_bottom = 324.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_rtpes")
+theme_override_font_sizes/font_size = 200
+text = "INSERT NAME"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = -210.0
+offset_right = 210.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_tw201")
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_rtpes")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_hifa6")
+text = "DONE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

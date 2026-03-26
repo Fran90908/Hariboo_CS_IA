@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dftiqbxwxy52"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_50fqe"]
+[ext_resource type="Texture2D" uid="uid://bcnp0iw7ul3mv" path="res://Potions/Test tube.png" id="1_oaknk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3vfl"]
+radius = 23.0
+height = 118.0
+
+[node name="TestTube" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 18
+collision_mask = 3
+script = ExtResource("1_50fqe")
+
+[node name="TestTube" type="Sprite2D" parent="Area2D"]
+position = Vector2(-1.90735e-06, 1.99999)
+scale = Vector2(0.0168457, 0.0168457)
+texture = ExtResource("1_oaknk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_y3vfl")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
