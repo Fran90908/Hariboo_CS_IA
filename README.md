@@ -31,6 +31,8 @@ rework/     ← Improved version after the assessment (same game, better code)
 |:-:|:-:|
 | <img src="icon_original.png" width="200" /> | <img src="icon_current.png" width="200" /> |
 
+For the Internal Assessment I went with a cartoony style using colours similar to the ones in-game. For the App Store version I kept the iconic slime but remade it with a liquid glass look, inspired by Apple's Home icon.
+
 ## Links
 
 - [App Store (Swift version)](https://apps.apple.com/es/app/hariboo/id6758705633)
