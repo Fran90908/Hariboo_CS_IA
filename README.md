@@ -1,4 +1,4 @@
-# Hariboo Madness — IB Computer Science IA
+# Hariboo Slime Madness — IB Computer Science IA
 
 An arcade survivor game built with **Godot Engine** and **GDScript** as my IB Computer Science Internal Assessment.
 
