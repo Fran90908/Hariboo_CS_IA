@@ -21,7 +21,7 @@ rework/     ← Improved version after the assessment (same game, better code)
 ## Screenshots
 
 <p align="center">
-  <img src="https://beachlab.org/apps/hariboo/hariboo-screenshot.png" width="500" alt="Hariboo Madness screenshot" />
+  <img src="screenshot.png" width="600" alt="Hariboo Madness Godot screenshot" />
 </p>
 
 ## Links
