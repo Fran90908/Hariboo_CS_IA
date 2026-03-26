@@ -17,6 +17,7 @@ rework/     ← Improved version after the assessment (same game, better code)
 - Local leaderboard
 - Buy weapons and abilities
 - Built entirely in Godot 4 with GDScript
+- Player and slime assets from [GDQuest's tutorial](https://www.youtube.com/watch?v=GwCiGixlqiU)
 - Music from [DOORS (Roblox)](https://www.roblox.com/games/6516141723) by LSPLASH
 
 ## Screenshots
