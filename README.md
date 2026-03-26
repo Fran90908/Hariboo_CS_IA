@@ -1,6 +1,6 @@
 # Hariboo Slime Madness — IB Computer Science IA
 
-An arcade survivor game built with **Godot Engine** and **GDScript** as my IB Computer Science Internal Assessment.
+An arcade survivor game built with **Godot Engine** and **GDScript** as my IB Computer Science Internal Assessment, building on top of [GDQuest's tutorial](https://www.youtube.com/watch?v=GwCiGixlqiU).
 
 The game evolved into [Hariboo Madness](https://apps.apple.com/es/app/hariboo/id6758705633), now available on the App Store for iPhone, iPad and Mac — rebuilt from scratch in Swift/SpriteKit.
 
